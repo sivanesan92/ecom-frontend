@@ -11,6 +11,9 @@ import UpdateProduct from "./components/UpdateProduct";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginPage from "./pages/Loginpage";
+import RegisterPage from "./pages/RegisterPage";
+//import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 
 function App() {
@@ -42,8 +45,11 @@ function App() {
         <Navbar onSelectCategory={handleCategorySelect}
          />
         <Routes>
+        <Route path="/register" element={<RegisterPage/>}/>
+        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/" element={<LoginPage/>}/>
           <Route
-            path="/"
+            path="/dashboard"
             element={
               <Home addToCart={addToCart} selectedCategory={selectedCategory}
               />
@@ -61,3 +67,23 @@ function App() {
 }
 
 export default App;
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <BrowserRouter>
+//       <Routes>
+        
+        
+//         <Route path="/dashboard" element={<h2>dashboard</h2>}/>
+        
+
+//       </Routes>
+//       </BrowserRouter>
+      
+      
+//     </div>
+//   );
+// }
+
+// export default App;
